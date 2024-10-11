@@ -76,9 +76,15 @@ fun PizzaPartyScreen(navController: NavController, modifier: Modifier = Modifier
             Text("Calculate")
         }
 
+        // Button to navigate to the GPA Calculator screen
+        Button(
+            onClick = { navController.navigate("app_screen") },
+            modifier = modifier.fillMaxWidth().padding(top = 16.dp)
+        ) {
+            Text("Go to GPA Calculator")
+        }
     }
 }
-
 @Composable
 fun NumberField(
     labelText: String,

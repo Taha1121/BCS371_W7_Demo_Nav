@@ -47,6 +47,7 @@ fun gpaappFun(navController: NavController) {
         )
 
 
+
         Button(onClick = {
             if (btnLabel == "Compute GPA") {
 
@@ -82,6 +83,17 @@ fun gpaappFun(navController: NavController) {
             Text(text = "GPA: $gpa")
         }
 
+        Button(
+            onClick = { navController.navigate("first_screen") },
+        ) {
+            Text("Go to first screen")
+        }
+
+        Button(
+            onClick = { navController.navigate("pizza_screen") },
+        ) {
+            Text("Go to Pizza Calculator")
+        }
 
     }
 }

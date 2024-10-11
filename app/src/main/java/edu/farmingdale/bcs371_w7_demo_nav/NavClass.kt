@@ -91,6 +91,7 @@ fun FirstScreen(navController: NavController) {
             }
 
         }
+
     }
 }
 
@@ -103,20 +104,37 @@ fun SecondScreen(navController: NavController) {
     var chk by remember { mutableStateOf(true) }
 
     val context = LocalContext.current
-    Column ( modifier = Modifier.padding(horizontal = 20.dp),
+    Column(
+        modifier = Modifier.padding(horizontal = 20.dp),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally){
-        Slider(value = sliderValue, onValueChange = { sliderValue=it }, Modifier.fillMaxWidth(), enabled = chk)
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Slider(
+            value = sliderValue,
+            onValueChange = { sliderValue = it },
+            Modifier.fillMaxWidth(),
+            enabled = chk
+        )
 
-        Text (fontSize = 20.sp, text = "Second Screen")
+        Text(fontSize = 20.sp, text = "Second Screen")
 
         Button(onClick = { context.startActivity(Intent(context, MainActivity2::class.java)) }) {
-            Text(fontSize = 20.sp, text ="Go to other Activity")
+            Text(fontSize = 20.sp, text = "Go to other Activity")
+        }
+        Button(
+            onClick = { navController.navigate("app_screen") },
+        ) {
+            Text("Go to GPA Calculator")
+        }
+        Button(
+            onClick = { navController.navigate("pizza_screen") },
+        ) {
+            Text("Go to pizza Calculator")
         }
 
         Switch(
             checked = chk,
-            onCheckedChange = { chk  = it  },
+            onCheckedChange = { chk = it },
             modifier = Modifier.padding(10.dp),
         )
         // ToDo 8: when the switch is off, disable the slider
@@ -125,6 +143,7 @@ fun SecondScreen(navController: NavController) {
     }
 
 }
+
 
 @Composable
 fun SpalshScreen(navController: NavController){
