@@ -88,6 +88,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             Icon( imageVector = Icons.Default.Info, contentDescription = "Phone")
             Text("Go To activity 2" , modifier = Modifier.padding(start=10.dp ))
         }
+        HorizontalDivider(thickness = DividerDefaults.Thickness)
 
         // ToDo 3: Change the spacing between the icons and text to be 10dp
         // ToDo 4: Add a horizontal divider between the buttons
