@@ -62,7 +62,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
         },
             modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
             Icon( imageVector = Icons.Default.LocationOn, contentDescription = "Location")
-            Text("Show me  Farmingdale")
+            Text("Show me  Farmingdale" , modifier = Modifier.padding(start=10.dp ))
         }
         HorizontalDivider(thickness = DividerDefaults.Thickness)
 
@@ -74,18 +74,19 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
         },
             modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
             Icon( imageVector = Icons.Default.Phone, contentDescription = "Phone")
-            Text("Call Me")
+            Text("Call Me" , modifier = Modifier.padding(start=10.dp ))
         }
 
         HorizontalDivider(thickness = DividerDefaults.Thickness)
 
         Button( onClick = {
             // ToDo 2: create explicit intent to open a new activity
-            context.startActivity(Intent(context, MainActivity::class.java))
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp),) {
             Icon( imageVector = Icons.Default.Info, contentDescription = "Phone")
-            Text("Go To activity 2")
+            Text("Go To activity 2" , modifier = Modifier.padding(start=10.dp ))
         }
 
         // ToDo 3: Change the spacing between the icons and text to be 10dp
